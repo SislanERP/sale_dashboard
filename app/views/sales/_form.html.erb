@@ -1,0 +1,65 @@
+<%= form_for(@sale) do |f| %>
+  <% if @sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+
+      <ul>
+      <% @sale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :number_doc %><br>
+    <%= f.number_field :number_doc %>
+  </div>
+  <div class="field">
+    <%= f.label :sale_note %><br>
+    <%= f.number_field :sale_note %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :um %><br>
+    <%= f.text_field :um %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :sale_clause %><br>
+    <%= f.text_field :sale_clause %>
+  </div>
+  <div class="field">
+    <%= f.label :date_doc %><br>
+    <%= f.date_select :date_doc %>
+  </div>
+  <div class="field">
+    <%= f.label :type_doc_id %><br>
+    <%= f.text_field :type_doc_id %>
+  </div>
+  <div class="field">
+    <%= f.label :destination_id %><br>
+    <%= f.text_field :destination_id %>
+  </div>
+  <div class="field">
+    <%= f.label :broker_id %><br>
+    <%= f.text_field :broker_id %>
+  </div>
+  <div class="field">
+    <%= f.label :product_id %><br>
+    <%= f.text_field :product_id %>
+  </div>
+  <div class="field">
+    <%= f.label :client_id %><br>
+    <%= f.text_field :client_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

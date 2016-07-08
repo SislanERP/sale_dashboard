@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cod_sii: 1
+  name: MyString
+  positive: false
+
+two:
+  cod_sii: 1
+  name: MyString
+  positive: false

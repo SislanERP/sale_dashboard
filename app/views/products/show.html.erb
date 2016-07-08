@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cod:</strong>
+  <%= @product.cod %>
+</p>
+
+<p>
+  <strong>Cond long:</strong>
+  <%= @product.cond_long %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Type product:</strong>
+  <%= @product.type_product %>
+</p>
+
+<p>
+  <strong>Line product:</strong>
+  <%= @product.line_product %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

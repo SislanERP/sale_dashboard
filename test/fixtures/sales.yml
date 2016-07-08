@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number_doc: 1
+  sale_note: 1
+  quantity: 1.5
+  um: MyString
+  price: 1.5
+  sale_clause: MyString
+  date_doc: 2016-07-08
+  type_doc_id: 
+  destination_id: 
+  broker_id: 
+  product_id: 
+  client_id: 
+
+two:
+  number_doc: 1
+  sale_note: 1
+  quantity: 1.5
+  um: MyString
+  price: 1.5
+  sale_clause: MyString
+  date_doc: 2016-07-08
+  type_doc_id: 
+  destination_id: 
+  broker_id: 
+  product_id: 
+  client_id: 

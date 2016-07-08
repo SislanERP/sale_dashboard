@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cod sii:</strong>
+  <%= @type_doc.cod_sii %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @type_doc.name %>
+</p>
+
+<p>
+  <strong>Positive:</strong>
+  <%= @type_doc.positive %>
+</p>
+
+<%= link_to 'Edit', edit_type_doc_path(@type_doc) %> |
+<%= link_to 'Back', type_docs_path %>
