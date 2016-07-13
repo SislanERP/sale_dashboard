@@ -2,6 +2,14 @@
 
 one:
   name: MyString
+  cod: MyString
+  cod_iso: MyString
+  continent: MyString
+  region: MyString
 
 two:
   name: MyString
+  cod: MyString
+  cod_iso: MyString
+  continent: MyString
+  region: MyString

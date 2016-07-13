@@ -18,7 +18,7 @@ class DestinationsControllerTest < ActionController::TestCase
 
   test "should create destination" do
     assert_difference('Destination.count') do
-      post :create, destination: { name: @destination.name }
+      post :create, destination: { cod: @destination.cod, cod_iso: @destination.cod_iso, continent: @destination.continent, name: @destination.name, region: @destination.region }
     end
 
     assert_redirected_to destination_path(assigns(:destination))
@@ -35,7 +35,7 @@ class DestinationsControllerTest < ActionController::TestCase
   end
 
   test "should update destination" do
-    patch :update, id: @destination, destination: { name: @destination.name }
+    patch :update, id: @destination, destination: { cod: @destination.cod, cod_iso: @destination.cod_iso, continent: @destination.continent, name: @destination.name, region: @destination.region }
     assert_redirected_to destination_path(assigns(:destination))
   end
 

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :destinations
   resources :sales
   resources :type_docs
-  resources :destinations
   resources :products
   resources :line_products
   resources :type_products

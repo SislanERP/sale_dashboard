@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Name</th>
       <th colspan="3"></th>
     </tr>
@@ -13,6 +14,7 @@
   <tbody>
     <% @type_products.each do |type_product| %>
       <tr>
+        <td><%= type_product.id %></td>
         <td><%= type_product.name %></td>
         <td><%= link_to 'Show', type_product %></td>
         <td><%= link_to 'Edit', edit_type_product_path(type_product) %></td>

@@ -5,5 +5,25 @@
   <%= @destination.name %>
 </p>
 
+<p>
+  <strong>Cod:</strong>
+  <%= @destination.cod %>
+</p>
+
+<p>
+  <strong>Cod iso:</strong>
+  <%= @destination.cod_iso %>
+</p>
+
+<p>
+  <strong>Continent:</strong>
+  <%= @destination.continent %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @destination.region %>
+</p>
+
 <%= link_to 'Edit', edit_destination_path(@destination) %> |
 <%= link_to 'Back', destinations_path %>
