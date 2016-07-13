@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160711045844) do
+ActiveRecord::Schema.define(version: 20160713181123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,14 +53,12 @@ ActiveRecord::Schema.define(version: 20160711045844) do
     t.integer  "cod"
     t.integer  "cond_long"
     t.string   "name"
-    t.integer  "type_product_id"
     t.integer  "line_product_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
   add_index "products", ["line_product_id"], name: "index_products_on_line_product_id", using: :btree
-  add_index "products", ["type_product_id"], name: "index_products_on_type_product_id", using: :btree
 
   create_table "sales", force: :cascade do |t|
     t.integer  "number_doc"
@@ -101,7 +99,6 @@ ActiveRecord::Schema.define(version: 20160711045844) do
 
   add_foreign_key "line_products", "type_products"
   add_foreign_key "products", "line_products"
-  add_foreign_key "products", "type_products"
   add_foreign_key "sales", "brokers"
   add_foreign_key "sales", "clients"
   add_foreign_key "sales", "destinations"

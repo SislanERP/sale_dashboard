@@ -1,6 +1,3 @@
 class TypeProduct < ActiveRecord::Base
-  # def to_s
-  #   # "#{self.id}-#{self.name}"
-  #   name
-  # end
+  has_many :line_products
 end

@@ -20,7 +20,7 @@
         <td><%= product.cod %></td>
         <td><%= product.cond_long %></td>
         <td><%= product.name %></td>
-        <td><%= product.type_product.try(:name) %></td>
+        <td><%= product.line_product.type_product.try(:name) %></td>
         <td><%= product.line_product.try(:name) %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
