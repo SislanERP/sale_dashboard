@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dashboard Sales</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Date doc</th>
+      <th>Number doc</th>
+      <th>Type doc</th>
+      <th>Destination</th>
+      <th>Client</th>
+      <th>Broker</th>
+      <th>Type product</th>
+      <th>Line product</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.date_doc %></td>
+        <td><%= sale.number_doc %></td>
+        <td><%= sale.type_doc.try(:name) %></td>
+        <td><%= sale.destination.try(:name) %></td>
+        <td><%= sale.client.try(:name) %></td>
+        <td><%= sale.broker.try(:name) %></td>
+        <td><%= sale.product.line_product.type_product.try(:name) %></td>
+        <td><%= sale.product.line_product.try(:name) %></td>
+        <td><%= sale.product.try(:name) %></td>
+        <td><%= sale.quantity %></td>
+        <td><%= sale.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

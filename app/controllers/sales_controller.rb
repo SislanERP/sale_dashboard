@@ -3,6 +3,12 @@ class SalesController < ApplicationController
 
   # GET /sales
   # GET /sales.json
+  def dashboard
+    @sales = Sale.all
+  end
+
+  # GET /sales
+  # GET /sales.json
   def index
     @sales = Sale.all
   end
