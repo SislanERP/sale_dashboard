@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'sales#index'
 
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords'
+  }
+
   resources :destinations
   resources :sales
   resources :type_docs

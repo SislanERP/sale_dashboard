@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 # Borramos todo primero, y reiniciamos los autonumericos en 1
 Sale.destroy_all
 ActiveRecord::Base.connection.execute("ALTER SEQUENCE sales_id_seq RESTART WITH 1")
@@ -31,6 +23,17 @@ ActiveRecord::Base.connection.execute("ALTER SEQUENCE Brokers_id_seq RESTART WIT
 Client.destroy_all
 ActiveRecord::Base.connection.execute("ALTER SEQUENCE clients_id_seq RESTART WITH 1")
 
+User.destroy_all
+ActiveRecord::Base.connection.execute("ALTER SEQUENCE users_id_seq RESTART WITH 1")
+
+#########################
+# Usuarios Devise
+test = User.create!(email: "test@mail.com", name: "User Name", password: "123456")
+alex = User.create!(email: "alex@landes.cl", name: "Alex Pacheco", password: "123456")
+victor = User.create!(email: "victor@landes.cl", name: "Victor Soto", password: "123456")
+nico = User.create!(email: "npollman@landes.cl", name: "Nicolas Pollman", password: "123456")
+
+
 #########################
 # Tipos de productos
 type_products_list = [
@@ -43,7 +46,7 @@ type_products_list = [
   'OTRAS VENTAS',
 ]
 type_products_list.each do |name|
-  TypeProduct.create(name: name)
+  TypeProduct.create!(name: name)
 end
 
 ####################
@@ -67,7 +70,7 @@ line_products_list = [
 ]
 
 line_products_list.each do |name, type_product|
-  LineProduct.create(name: name, type_product: TypeProduct.find_by(name: type_product))
+  LineProduct.create!(name: name, type_product: TypeProduct.find_by(name: type_product))
 end
 
 #####################
@@ -1316,7 +1319,7 @@ products_list = [
 ]
 
 products_list.each do |cond_long, cod, name, type_product, line_product|
-  Product.create(
+  Product.create!(
     cond_long: cond_long,
     cod: cod,
     name: name,
@@ -1363,11 +1366,11 @@ type_doc_list = [
   [812, "Resolución del SNA donde califica Servicios de Exportación", true],
   [813, "Pasaporte", true],
   [814, "Certificado de Depósito Bolsa Prod. Chile", true],
-  [815, "Vale de Prenda Bolsa Prod. Chile"],
+  [815, "Vale de Prenda Bolsa Prod. Chile", true],
 ]
 
 type_doc_list.each do |cod_sii, name, positive|
-  TypeDoc.create(cod_sii: cod_sii, name: name, positive: positive)
+  TypeDoc.create!(cod_sii: cod_sii, name: name, positive: positive)
 end
 
 #################################
@@ -1614,7 +1617,7 @@ destination_list = [
   ['ZWE', 'Zimbabwe', 'Africa', 'Eastern Africa', 'ZW'],
 ]
 destination_list.each do |cod, name, continent, region, cod_iso|
-  Destination.create(cod: cod, name: name, continent: continent, region: region, cod_iso: cod_iso)
+  Destination.create!(cod: cod, name: name, continent: continent, region: region, cod_iso: cod_iso)
 end
 
 #######################
@@ -1688,7 +1691,7 @@ brokes_list = [
 ]
 
 brokes_list.each do |code, name|
-  Broker.create(code: code, name: name)
+  Broker.create!(code: code, name: name)
 end
 
 ########################################
@@ -1867,7 +1870,7 @@ clients_list = [
   [96929960,"ORIZON S.A."],
 ]
 clients_list.each do |rut, name|
-  Client.create(rut: rut, name: name)
+  Client.create!(rut: rut, name: name)
 end
 
 
@@ -3922,7 +3925,7 @@ sales_list = [
 ]
 
 sales_list.each do |date_doc, type_doc, number_doc, sale_note, destination, client, broker, product, sale_clause, um, quantity, price|
-  Sale.create(
+  Sale.create!(
     date_doc: date_doc,
     type_doc: TypeDoc.find_by(cod_sii: type_doc),
     number_doc: number_doc,
