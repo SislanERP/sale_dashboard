@@ -89,7 +89,7 @@
 /* ERROR & LOGIN & LOCKSCREEN*/
 
 .middle-box {
-  max-width: 400px;
+  max-width: 500px;
   z-index: 100;
   margin: 0 auto;
   padding-top: 40px;
@@ -101,7 +101,7 @@
 }
 
 .loginscreen.middle-box {
-  width: 300px;
+  // width: 300px;
 }
 
 .loginColumns {
@@ -1358,4 +1358,3 @@ body.body-small .vote-icon {
 .lightBoxGallery img {
   margin: 5px
 }
-

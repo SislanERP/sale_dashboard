@@ -1,11 +1,6 @@
 class SalesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_sale, only: [:show, :edit, :update, :destroy]
-
-  # GET /sales
-  # GET /sales.json
-  def dashboard
-    @sales = Sale.all
-  end
 
   # GET /sales
   # GET /sales.json

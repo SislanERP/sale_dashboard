@@ -4,7 +4,6 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :cod
       t.integer :cond_long
       t.string :name
-      t.references :type_product, index: true, foreign_key: true
       t.references :line_product, index: true, foreign_key: true
 
       t.timestamps null: false

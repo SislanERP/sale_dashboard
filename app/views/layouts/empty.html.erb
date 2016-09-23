@@ -22,10 +22,10 @@
 
 </head>
 <body class="gray-bg">
-
+  <div id="wrapper">
   <!-- Main view  -->
   <%= yield %>
-
+  </div>
 
   <!-- Include javascript per-controller - vendor plugins -->
 <%= javascript_include_tag params[:controller] if (Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application)).find_asset("#{params[:controller]}.js") %>
