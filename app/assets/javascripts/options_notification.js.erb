@@ -1,0 +1,53 @@
+var notification_options = {
+  "closeButton": true,
+  "debug": false,
+  "progressBar": true,
+  "positionClass": "toast-top-right",
+  "onclick": null,
+  "showDuration": "400",
+  "hideDuration": "1000",
+  "timeOut": "7000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+
+var sweet_alert_warning = {
+  title: "<%= I18n.t('are_you_sure') %>",
+  text: "<%= I18n.t('you_can_not_be_recovered_this_record') %>",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#0e9aef",
+  confirmButtonText: "<%= I18n.t('yes_delete_it') %>",
+  cancelButtonText: "<%= I18n.t('cancel') %>",
+  closeOnConfirm: true
+}
+
+var lang_data_tables = {
+  "sProcessing": "Procesando...",
+  "sLengthMenu": "Mostrar _MENU_ registros",
+  "sZeroRecords": "No se encontraron resultados",
+  "sEmptyTable": "Ningún dato disponible en esta tabla",
+  "sInfo": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
+  "sInfoEmpty": "Mostrando del 0 al 0 de 0 registros",
+  "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+  "sInfoPostFix": "",
+  "sSearch": "Buscar:",
+  "sUrl": "",
+  "sInfoThousands": ",",
+  "sLoadingRecords": "Cargando...",
+  "oPaginate": {
+    "sFirst": "Primero",
+    "sLast": "Último",
+    "sNext": "Siguiente",
+    "sPrevious": "Anterior"
+  },
+  "oAria": {
+    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+  }
+}
+// "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+// "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",

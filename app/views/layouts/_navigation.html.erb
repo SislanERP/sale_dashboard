@@ -1,0 +1,59 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+  <div class="sidebar-collapse">
+    <ul class="nav metismenu" id="side-menu">
+      <li class="nav-header">
+        <div class="dropdown profile-element">
+          <span>
+              <img alt="image" class="img-circle" src="<%= image_url 'profile_small.jpg' %>"/>
+          </span>
+          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <span class="clear">
+              <span class="block m-t-xs">
+                <strong class="font-bold"><%= current_user.try(:name) %></strong>
+              </span>
+              <span class="text-muted text-xs block">
+                <%= current_user.position_by_company(@company) %>
+              </span>
+              <span class="text-muted text-xs block">
+                <%= @company.try(:fantasy_name) %> <b class="caret"></b>
+              </span>
+            </span>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight m-t-xs">
+            <li><a href="#">Perfil</a></li>
+            <li><%= link_to "Cambiar empresa", "#" %></li>
+            <li class="divider"></li>
+            <li>
+              <a href="<%= destroy_user_session_path %>" data-method="delete">
+                <%= t('devise.shared.links.sign_out') %>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="logo-element">
+          PCM
+        </div>
+      </li> <!-- End nav header -->
+      <!-- devices sales -->
+      <li class="<%= is_active_controller("sales") %>">
+        <a href="">
+          <i class="fa fa-gears"></i> <span class="nav-label">Ventas</span>
+          <span class="fa arrow"></span>
+        </a>
+        <!-- Second Level of Devices -->
+        <ul class="nav nav-second-level collapse <%= is_active_controller("sales") %>">
+          <!-- list_of_devices -->
+          <li class="<%= is_active_action("sales", "index") %>">
+            <%= link_to 'Grid de ventas', sales_path %>
+          </li>
+          <!-- list of type of devices -->
+          <li class="<%= is_active_action("sales", "dash") %>">
+            <%= link_to 'cubo', sales_path %>
+          </li>
+        </ul>
+      </li>
+      <!-- end sales menu -->
+
+    </ul>
+  </div>
+</nav>

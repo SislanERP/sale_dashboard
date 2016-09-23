@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'sales#index'
 
   resources :destinations
   resources :sales
@@ -9,13 +10,12 @@ Rails.application.routes.draw do
   resources :clients
   resources :brokers
 
-  get 'sales/dashboard'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'sales#dashboard'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

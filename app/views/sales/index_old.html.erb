@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date doc</th>
+      <th>Numbre doc</th>
+      <th>Type doc</th>
+      <th>Destination</th>
+      <th>Client</th>
+      <th>Client Rut</th>
+      <th>Broker</th>
+      <th>Sale note</th>
+      <th>Sale clause</th>
+      <th>Type product</th>
+      <th>Line product</th>
+      <th>Product</th>
+      <th>Um</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.date_doc %></td>
+        <td><%= sale.number_doc %></td>
+        <td><%= sale.type_doc.try(:name) %></td>
+        <td><%= sale.destination.try(:name) %></td>
+        <td><%= sale.client.try(:name) %></td>
+        <td><%= sale.client.try(:rut) %></td>
+        <td><%= sale.broker.try(:name) %></td>
+        <td><%= sale.sale_note %></td>
+        <td><%= sale.sale_clause %></td>
+        <td><%= sale.product.line_product.type_product.try(:name) %></td>
+        <td><%= sale.product.line_product.try(:name) %></td>
+        <td><%= sale.product.try(:name) %></td>
+        <td><%= sale.um %></td>
+        <td><%= sale.quantity %></td>
+        <td><%= sale.price %></td>
+        <td><%= link_to 'Show', sale %></td>
+        <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
+        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sale', new_sale_path %>
