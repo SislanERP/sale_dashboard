@@ -7,6 +7,11 @@ class SalesController < ApplicationController
   def index
     @sales = Sale.all
   end
+  # GET /sales
+  # GET /sales.json
+  def pivot
+    @sales = Sale.all
+  end
 
   # GET /sales/1
   # GET /sales/1.json

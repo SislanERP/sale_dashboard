@@ -1,4 +1,6 @@
 json.extract! sale, :id, :date_doc, :number_doc, :quantity, :price, :created_at, :updated_at
+json.year sale.date_doc.year
+json.month sale.date_doc.month
 json.type_doc sale.type_doc.try(:name)
 json.destination sale.destination.try(:name)
 json.client sale.client.try(:name)
