@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'sales#index'
+  root 'sales#pivot'
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',

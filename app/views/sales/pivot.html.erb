@@ -47,8 +47,8 @@
     $(function() {
       $.getJSON('<%= "#{pivot_sales_path}.json" %>', function(pivot) {
         $("#output").pivotUI(pivot, {
-          rows: ["destination", "broker", "client"],
-          cols: ["type_product", "line_product"],
+          rows: ["country"],
+          cols: ["year","type_product"],
           aggregatorName: "Average",
           vals: ["price"],
           rendererName: "Heatmap"
