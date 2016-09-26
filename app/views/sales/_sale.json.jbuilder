@@ -1,4 +1,5 @@
 json.extract! sale, :id, :date_doc, :number_doc, :quantity, :price, :created_at, :updated_at
+json.valor (sale.price * sale.quantity)
 json.year sale.date_doc.year
 json.month sale.date_doc.month
 json.type_doc sale.type_doc.try(:name)
