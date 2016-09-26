@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   }
 
   resources :destinations
-  resources :sales
+  resources :sales do
+    get 'pivot', on: :collection
+  end
   resources :type_docs
   resources :products
   resources :line_products

@@ -1,0 +1,61 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2><%= "Pivot de Ventas" %></h2>
+    <ol class="breadcrumb">
+      <%= render 'common/breadcrumb_home' %>
+      <li class="active">
+        <strong><%= "Pivot de Ventas" %></strong>
+      </li>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox">
+        <div class="ibox-title">
+          <h5>Pivot de Ventas</h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="fullscreen-link">
+              <i class="fa fa-expand"></i>
+            </a>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="scroll_content">
+            <div id="output">
+            <!-- Here Pivot Table -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :javascript do %>
+
+  <script type="text/javascript">
+
+    $(function() {
+      $.getJSON('<%= "#{pivot_sales_path}.json" %>', function(pivot) {
+        $("#output").pivotUI(pivot, {
+          rows: ["destination", "broker", "client"],
+          cols: ["type_product", "line_product"],
+          aggregatorName: "Average",
+          vals: ["price"],
+          rendererName: "Heatmap"
+        });
+      });
+    });
+
+  </script>
+
+<% end %>
